@@ -57,10 +57,6 @@
   - [Comprehensive Testing Table](#comprehensive-testing-table--frontend--admin-modules)
     - [Frontend Testing Table](#frontend-testing-table)
     - [Admin Panel (Backend) Testing Table](#admin-panel-backend-testing-table)
-- [Contributing](#contributing)
-  - [How to Contribute](#how-to-contribute)
-  - [Reporting Issues](#reporting-issues)
-  - [Development Guidelines](#development-guidelines)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
@@ -224,7 +220,6 @@ Tags enable:
 
 Tags are a lightweight yet powerful taxonomy system — especially helpful for dynamic filtering, cross-linking posts, or showcasing related content.
 
-![Creating Tags](media/readme_images/image_page13_1.png)
 
 ##### Posts Module
 The Posts module is the heart of content creation in The Tennis Time's admin panel. It allows editors to create, update, and publish rich, media-enabled blog articles that appear on the front end.
@@ -260,8 +255,6 @@ Admins or writers can:
 
 This module powers the editorial workflow from drafting to publishing, enabling content-rich storytelling for the tennis community.
 
-![Creating Posts](media/readme_images/image_page12_1.png)
-
 ---
 
 #### User Management Modules
@@ -277,16 +270,8 @@ The Users module is at the heart of Django's authentication and authorization sy
   - Not entirely numeric or too common
   - Not too similar to personal info
 
-**Use Case:**
-Admin users can:
-- Manually register contributors, editors, or moderators
-- Enforce secure credentials
-- Control authentication behavior (e.g., disable password login for OAuth-only accounts)
-- Follow up with group or permission assignment after creation
-
 This interface is often used during initial setup or to onboard team members with specific editorial or moderation responsibilities.
 
-![User Management](media/readme_images/image_page9_1.png)
 
 ##### Categories Module
 The Categories module allows administrators to organize blog content into structured editorial sections. These categories are visible to readers on the front end (e.g., "News", "Features", "Local Focus") and provide an intuitive way to filter posts.
@@ -303,8 +288,6 @@ This module supports:
 - SEO-friendly URL structure for category-specific blog pages
 
 Admins can add new categories or refine existing ones as editorial needs grow — all without needing to touch code.
-
-![Category Management](media/readme_images/image_page10_1.png)
 
 ---
 
@@ -325,15 +308,6 @@ The Comments module provides a centralized interface for moderating user-generat
 - **By Date**: Filter comments by submission date (e.g., past 7 days, this month).
 - **By Post**: View all comments attached to specific posts.
 
-**Use Case:**
-Site administrators or moderators can:
-- Approve meaningful or respectful comments to build community interaction
-- Remove inappropriate or spam submissions
-- Monitor engagement trends on high-traffic posts
-
-This tool is essential for maintaining content quality and encouraging healthy discussion on the platform.
-
-![Comment Management](media/readme_images/image_page10_2.png)
 
 
 ---
@@ -568,27 +542,6 @@ heroku open
 | Social Accounts          | View users’ linked social logins                                                 | Admin → Social Accounts                 | Social logins listed correctly          | ✅ Pass   |
 | Social Tokens            | View OAuth2 access and refresh tokens                                            | Admin → Social Application Tokens       | Tokens stored and displayed securely    | ✅ Pass   |
 | Social Applications      | Integrate third-party providers (Google, GitHub, etc.)                           | Admin → Social Applications             | Providers configured and site assignment works | ✅ Pass   |
-
----
-
-   - Provide a clear description of your changes
-   - Include screenshots for UI changes
-   - Reference any related issues
-
-### Reporting Issues
-
-Found a bug or have a feature request? Please:
-- Check existing issues first
-- Provide detailed reproduction steps
-- Include browser/device information
-- Add screenshots if applicable
-
-### Development Guidelines
-
-- **Code Style**: Follow PEP 8 for Python code
-- **Documentation**: Update README.md for new features
-- **Testing**: Ensure all tests pass before submitting
-- **Commits**: Use descriptive commit messages
 
 ---
 
