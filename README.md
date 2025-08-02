@@ -12,14 +12,14 @@
 
 ## Table of Contents
 
-### 🚀 Getting Started
+### Getting Started
 - [Live Demo](#live-demo)
 - [Quick Start Guide](#quick-start-guide)
   - [Prerequisites](#prerequisites)
   - [Installation Steps](#installation-steps)
   - [Next Steps](#next-steps)
 
-### 📋 Project Overview
+### Project Overview
 - [Project Overview](#project-overview)
   - [Key Capabilities](#key-capabilities)
   - [Key Features](#key-features)
@@ -28,13 +28,13 @@
     - [Typography Hierarchy](#typography-hierarchy)
     - [Responsive Layout](#responsive-layout)
 
-### 👥 User Experience
+### User Experience
 - [User Experience & User Stories](#user-experience--user-stories)
   - [Guest User](#guest-user)
   - [Registered User](#registered-user)
   - [Administrator](#administrator)
 
-### 🏗️ Architecture & Structure
+### Architecture & Structure
 - [Project Structure & Interface Overview](#project-structure--interface-overview)
   - [Frontend Pages](#frontend-pages)
     - [Homepage](#homepage)
@@ -51,7 +51,7 @@
   - [Architecture Overview](#architecture-overview)
   - [Key Dependencies](#key-dependencies)
 
-### ⚙️ Configuration & Deployment
+### Configuration & Deployment
 - [Configuration](#configuration)
   - [Django Settings](#django-settings)
   - [AllAuth Configuration](#allauth-configuration)
@@ -62,20 +62,20 @@
   - [3. Deploy](#3-deploy)
   - [4. Open Application](#4-open-application)
 
-### 📝 Documentation & Testing
+### Documentation & Testing
 - [Example Editorial Workflow](#example-editorial-workflow)
 - [Testing](#testing)
   - [Comprehensive Testing Table](#comprehensive-testing-table--frontend--admin-modules)
     - [Frontend Testing Table](#frontend-testing-table)
     - [Admin Panel (Backend) Testing Table](#admin-panel-backend-testing-table)
 
-### 📄 Legal & Credits
+### Legal & Credits
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 **[View Live Application](https://blog-djanago-2acbfce559e4.herokuapp.com)**
 
@@ -83,18 +83,18 @@ Experience the full functionality of The Tennis Time blog with real content and 
 
 ---
 
-## 📋 Project Overview
+## Project Overview
 
 The Tennis Time offers structured editorial coverage of global and local tennis with a content-first approach. Built with modern web technologies, it provides a comprehensive platform for tennis journalism and community engagement.
 
-### 🎯 Key Capabilities
+### Key Capabilities
 - **Dynamic content filtering** by category and tag
 - **Admin-driven publishing system** with WYSIWYG editor
 - **User authentication and comment moderation** via Django Allauth
 - **SEO-optimized** content structure and URLs
 - **Mobile-first responsive design** for optimal viewing on all devices
 
-### ✨ Key Features
+### Key Features
 
 | Feature | Description |
 |---------|-------------|
@@ -107,7 +107,7 @@ The Tennis Time offers structured editorial coverage of global and local tennis 
 | **Custom Design System** | Tennis-themed color scheme and typography for brand consistency |
 | **SEO Optimization** | Built-in SEO features for better search engine visibility |
 
-### 🎨 Design System
+### Design System
 
 #### Color Palette
 | Element | Color | Hex Code | Usage |
@@ -141,11 +141,11 @@ The Tennis Time offers structured editorial coverage of global and local tennis 
 
 ---
 
-## 👥 User Experience & User Stories
+## User Experience & User Stories
 
 The Tennis Time is designed with three distinct user personas to ensure an optimal experience for everyone in the tennis community.
 
-### 👤 Guest User
+### Guest User
 **Goal**: Discover and consume tennis content without barriers
 
 | User Story | Acceptance Criteria |
@@ -155,7 +155,7 @@ The Tennis Time is designed with three distinct user personas to ensure an optim
 | **As a Guest**, I want to navigate content using categories and tags | ✅ Intuitive filtering and search functionality |
 | **As a Guest**, I want to discover related articles | ✅ Related posts suggestions on every article page |
 
-### 👤 Registered User
+### Registered User
 **Goal**: Engage with the community through comments and personalized features
 
 | User Story | Acceptance Criteria |
@@ -164,7 +164,7 @@ The Tennis Time is designed with three distinct user personas to ensure an optim
 | **As a Registered User**, I can comment on posts | ✅ Comment system with moderation capabilities |
 | **As a Registered User**, I want to receive notifications | ✅ Email notifications for comment replies |
 
-### 👤 Administrator
+### Administrator
 **Goal**: Manage content, users, and community engagement effectively
 
 | User Story | Acceptance Criteria |
