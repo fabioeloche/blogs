@@ -224,27 +224,6 @@ Tags are a lightweight yet powerful taxonomy system — especially helpful for d
 ##### Posts Module
 The Posts module is the heart of content creation in The Tennis Time's admin panel. It allows editors to create, update, and publish rich, media-enabled blog articles that appear on the front end.
 
-**Key Sections & Fields:**
-
-**Basic Information**
-- **Title**: The headline of the blog post.
-- **Slug**: A URL-friendly version of the title (auto-generated if left blank).
-- **Author**: Selects the post's writer (linked to registered users).
-- **Excerpt**: A short summary used for previews or post listings.
-
-** Detailed Content**
-- **Content**: Main article body, written using the Summernote WYSIWYG editor. It supports:
-  - Bold/italic text
-  - Lists and headings
-  - Hyperlinks, code blocks, and embedded media
-- **Image**: Upload a featured image that appears alongside the article.
-
-** Categorization**
-- **Category**: Assign the post to a predefined section (e.g., News, Local Focus).
-- **Tags**: Add tennis-related keywords (e.g., "Djokovic", "Grass Court", "Strategy") for filtering and SEO.
-
-** Metadata (Collapsible Section)**
-May contain fields like publish date, post status (draft/published), or SEO fields — depending on customization.
 
 **Use Case:**
 Admins or writers can:
@@ -262,13 +241,6 @@ This module powers the editorial workflow from drafting to publishing, enabling 
 ##### Users Module
 The Users module is at the heart of Django's authentication and authorization system. It allows administrators to add and manage user accounts, including login credentials, roles, and permissions.
 
-**Key Fields:**
-- **Username**: A unique identifier for the user; must be under 150 characters and may include letters, digits, and certain special characters.
-- **Password-based authentication**: Option to enable or disable password login. If disabled, users may authenticate via third-party backends (like social login or SSO).
-- **Password & Password Confirmation**: A secure password entry system with Django's built-in validators to enforce:
-  - Minimum 8 characters
-  - Not entirely numeric or too common
-  - Not too similar to personal info
 
 This interface is often used during initial setup or to onboard team members with specific editorial or moderation responsibilities.
 
@@ -307,8 +279,6 @@ The Comments module provides a centralized interface for moderating user-generat
 - **By Approval**: Quickly sort by approved or pending comments.
 - **By Date**: Filter comments by submission date (e.g., past 7 days, this month).
 - **By Post**: View all comments attached to specific posts.
-
-
 
 ---
 
@@ -385,8 +355,23 @@ Django-Post/
 ├── requirements.txt        # Python dependencies
 ├── Procfile                # Heroku deployment
 ├── runtime.txt             # Python version
+├── .gitignore              # Git ignore rules
+├── .gitpod.yml             # Gitpod configuration
+├── commit_and_push.ps1     # PowerShell deployment script
+├── setup_github.ps1        # GitHub setup script
+├── setup_github.sh         # GitHub setup script (Linux/Mac)
 └── README.md               # This file
 ```
+
+### Configuration Files
+
+The project includes several configuration files for different deployment and development scenarios:
+
+- **`.gitignore`**: Excludes unnecessary files from version control
+- **`.gitpod.yml`**: Configures Gitpod development environment
+- **`commit_and_push.ps1`**: PowerShell script for automated deployment
+- **`setup_github.ps1`**: Windows script for GitHub repository setup
+- **`setup_github.sh`**: Linux/Mac script for GitHub repository setup
 
 - **`blog/`**: Contains the core application logic, models, views, and URLs for the main blog functionality.
 - **`about/`**: A separate app to manage the content of the "About" page.
