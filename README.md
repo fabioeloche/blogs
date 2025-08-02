@@ -58,7 +58,7 @@ The Tennis Time offers structured editorial coverage of global and local tennis 
 | **Highlights** | Clay Red | `#DC3545` | Alerts and emphasis |
 | **Navigation** | Dark Green | `#1E7E34` | Main navigation bar |
 
-#### 📝 Typography Hierarchy
+#### Typography Hierarchy
 | Element | Size | Weight | Color | Purpose |
 |---------|------|--------|-------|---------|
 | **H1** | 2.5rem | Bold | `#1E7E34` | Main page titles |
@@ -80,11 +80,11 @@ The Tennis Time offers structured editorial coverage of global and local tennis 
 
 ---
 
-## 👥 User Experience & User Stories
+## User Experience & User Stories
 
 The Tennis Time is designed with three distinct user personas to ensure an optimal experience for everyone in the tennis community.
 
-### 🎾 Guest User
+### Guest User
 **Goal**: Discover and consume tennis content without barriers
 
 | User Story | Acceptance Criteria |
@@ -94,7 +94,7 @@ The Tennis Time is designed with three distinct user personas to ensure an optim
 | **As a Guest**, I want to navigate content using categories and tags | ✅ Intuitive filtering and search functionality |
 | **As a Guest**, I want to discover related articles | ✅ Related posts suggestions on every article page |
 
-### 🔐 Registered User
+### Registered User
 **Goal**: Engage with the community through comments and personalized features
 
 | User Story | Acceptance Criteria |
@@ -115,38 +115,48 @@ The Tennis Time is designed with three distinct user personas to ensure an optim
 
 ---
 
-## 📸 Screenshots & Interface Overview
+## 📸 Project Structure & Interface Overview
 
 > **Note**: All screenshots are stored in the `media/readme_images/` folder and showcase the complete user experience of The Tennis Time blog.
 
-### Homepage
+---
+
+### 🏠 Frontend Pages
+
+#### Homepage
 The homepage, also called "Latest Posts", displays the most recent articles in a grid-based layout. Each post preview includes a title, a featured image, and an excerpt. The layout is responsive and mobile-first.
 
 ![Homepage](media/readme_images/image_page1_1.png)
 
-### About Page
+#### About Page
 This page introduces the blog with a compelling narrative from the creator, Fabio, which emphasizes the community-driven purpose behind the blog. The page outlines three key editorial categories using a clean, card-based layout: **Rally & Banter**, **Local Focus**, and **Beyond the Baseline**.
 
 ![About Page](media/readme_images/image_page3_1.png)
 
-
-
-### Category Pages
+#### Category Pages
 These pages are accessed via the URL `/category/<category_name>` and filter posts by a specific editorial section. They display responsive article cards and may also show the article count for that category.
 
 ![Category Page](media/readme_images/Category-page.png)
 
-### Tag Pages
+#### Tag Pages
 Similar to category pages, these pages are found at `/tag/<tag_name>` and filter posts by a specific player or topic, such as "Jannik Sinner". Each tag links to a filtered content page to help users find related content.
 
 ![Tag Page](media/readme_images/Tag-page.png)
 
-### Admin Panel
+---
+
+### 🛠️ Admin Panel Modules
+
+#### Main Admin Interface
 The admin panel is built on Django's native interface, giving editors and content managers a secure and streamlined environment. It features a left-hand sidebar for categorized modules and a real-time "Recent Actions" feed to track editorial activities.
+
 ![Admin Panel](media/readme_images/image_page4_1.png)
 
-#### Admin Module: Tags
+---
 
+#### Content Management Modules
+
+##### Tags Module
 The Tags module allows administrators to manage keywords or labels that can be applied to blog posts for better organization and discoverability.
 
 **Key Fields:**
@@ -163,8 +173,7 @@ Tags are a lightweight yet powerful taxonomy system — especially helpful for d
 
 ![Creating Tags](media/readme_images/image_page13_1.png)
 
-#### Admin Module: Posts
-
+##### Posts Module
 The Posts module is the heart of content creation in The Tennis Time's admin panel. It allows editors to create, update, and publish rich, media-enabled blog articles that appear on the front end.
 
 **Key Sections & Fields:**
@@ -200,8 +209,11 @@ This module powers the editorial workflow from drafting to publishing, enabling 
 
 ![Creating Posts](media/readme_images/image_page12_1.png)
 
-#### Admin Module: Users
+---
 
+#### User Management Modules
+
+##### Users Module
 The Users module is at the heart of Django's authentication and authorization system. It allows administrators to add and manage user accounts, including login credentials, roles, and permissions.
 
 **Key Fields:**
@@ -223,8 +235,7 @@ This interface is often used during initial setup or to onboard team members wit
 
 ![User Management](media/readme_images/image_page9_1.png)
 
-#### Admin Module: Categories
-
+##### Categories Module
 The Categories module allows administrators to organize blog content into structured editorial sections. These categories are visible to readers on the front end (e.g., "News", "Features", "Local Focus") and provide an intuitive way to filter posts.
 
 **Key Fields:**
@@ -242,8 +253,11 @@ Admins can add new categories or refine existing ones as editorial needs grow �
 
 ![Category Management](media/readme_images/image_page10_1.png)
 
-#### Admin Module: Comments
+---
 
+#### Community Management Modules
+
+##### Comments Module
 The Comments module provides a centralized interface for moderating user-generated feedback on blog posts. It allows admins to efficiently review, approve, edit, or remove submitted comments.
 
 **Main Interface Elements:**
