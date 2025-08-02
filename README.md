@@ -1,4 +1,4 @@
-# 🎾 The Tennis Time – A Full-Stack Django Blog
+# The Tennis Time – A Full-Stack Django Blog
 
 [![Django](https://img.shields.io/badge/Django-4.2+-green.svg)](https://www.djangoproject.com/)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-**[🌐 View Live Application](https://blog-djanago-2acbfce559e4.herokuapp.com)**
+**[View Live Application](https://blog-djanago-2acbfce559e4.herokuapp.com)**
 
 Experience the full functionality of The Tennis Time blog with real content and interactive features.
 
@@ -20,11 +20,6 @@ Experience the full functionality of The Tennis Time blog with real content and 
 
 The Tennis Time offers structured editorial coverage of global and local tennis with a content-first approach. Built with modern web technologies, it provides a comprehensive platform for tennis journalism and community engagement.
 
-### Core Mission
-- **Content-First Approach**: Prioritize quality tennis journalism and community stories
-- **User Experience**: Intuitive navigation and responsive design for all devices
-- **Editorial Workflow**: Streamlined content management for writers and editors
-- **Community Engagement**: Interactive features to foster tennis community discussions
 
 ### Key Capabilities
 - **Dynamic content filtering** by category and tag
@@ -115,13 +110,13 @@ The Tennis Time is designed with three distinct user personas to ensure an optim
 
 ---
 
-## 📸 Project Structure & Interface Overview
+## Project Structure & Interface Overview
 
 > **Note**: All screenshots are stored in the `media/readme_images/` folder and showcase the complete user experience of The Tennis Time blog.
 
 ---
 
-### 🏠 Frontend Pages
+### Frontend Pages
 
 #### Homepage
 The homepage, also called "Latest Posts", displays the most recent articles in a grid-based layout. Each post preview includes a title, a featured image, and an excerpt. The layout is responsive and mobile-first.
@@ -145,7 +140,7 @@ Similar to category pages, these pages are found at `/tag/<tag_name>` and filter
 
 ---
 
-### 🛠️ Admin Panel Modules
+### Admin Panel Modules
 
 #### Main Admin Interface
 The admin panel is built on Django's native interface, giving editors and content managers a secure and streamlined environment. It features a left-hand sidebar for categorized modules and a real-time "Recent Actions" feed to track editorial activities.
@@ -500,7 +495,7 @@ heroku open
 | Responsive Layout        | Adapts to all screen sizes                                                       | Resize browser, test on devices         | Fully responsive across viewports       | ✅ Pass   |
 | Browser Compatibility    | Works on Chrome, Firefox, Safari, Edge                                           | Open site in major browsers             | No display or functionality issues      | ✅ Pass   |
 
-#### 🛠️ Admin Panel (Backend) Testing Table
+#### Admin Panel (Backend) Testing Table
 
 | Admin Module             | Expected Outcome                                                                 | Testing Action                          | Result                                  | Pass/Fail |
 |--------------------------|----------------------------------------------------------------------------------|-----------------------------------------|-----------------------------------------|-----------|
@@ -521,22 +516,22 @@ heroku open
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 The Tennis Time/
-├── 📂 media/                    # Media files
-│   ├── 📂 blog_images/         # Blog post images
-│   └── 📂 readme_images/       # README documentation screenshots
-├── 📂 templates/               # HTML templates
-│   ├── 📂 blog/               # Blog templates
-│   ├── 📂 about/              # About page templates
-│   └── 📂 account/            # Authentication templates
-├── 📂 static/                 # Static files (CSS, JS)
-├── 📂 blog/                   # Main blog app
-├── 📂 about/                  # About page app
-├── 📂 config/                 # Project settings
-└── 📄 README.md              # This documentation
+├── media/                    # Media files
+│   ├── blog_images/         # Blog post images
+│   └── readme_images/       # README documentation screenshots
+├── templates/               # HTML templates
+│   ├── blog/               # Blog templates
+│   ├── about/              # About page templates
+│   └── account/            # Authentication templates
+├── static/                 # Static files (CSS, JS)
+├── blog/                   # Main blog app
+├── about/                  # About page app
+├── config/                 # Project settings
+└── README.md              # This documentation
 ```
 
 ---
