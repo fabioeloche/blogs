@@ -8,6 +8,64 @@
 
 **The Tennis Time** is a full-stack editorial blog developed with **Django**, tailored for tennis enthusiasts. The platform delivers compelling content like match commentary, club news, and editorial insights through a responsive frontend and a powerful Django admin backend. Editors can manage articles, images, tags, and comments from a secure, modular admin interface.
 
+---
+
+## Table of Contents
+
+- [Live Demo](#live-demo)
+- [Project Overview](#project-overview)
+  - [Key Capabilities](#key-capabilities)
+  - [Key Features](#key-features)
+  - [Design System](#design-system)
+    - [Color Palette](#color-palette)
+    - [Typography Hierarchy](#typography-hierarchy)
+    - [Responsive Layout](#responsive-layout)
+- [User Experience & User Stories](#user-experience--user-stories)
+  - [Guest User](#guest-user)
+  - [Registered User](#registered-user)
+  - [Administrator](#administrator)
+- [Project Structure & Interface Overview](#project-structure--interface-overview)
+  - [Frontend Pages](#frontend-pages)
+    - [Homepage](#homepage)
+    - [About Page](#about-page)
+    - [Category Pages](#category-pages)
+    - [Tag Pages](#tag-pages)
+  - [Admin Panel Modules](#admin-panel-modules)
+    - [Main Admin Interface](#main-admin-interface)
+    - [Content Management Modules](#content-management-modules)
+    - [User Management Modules](#user-management-modules)
+    - [Community Management Modules](#community-management-modules)
+- [Technology Stack](#technology-stack)
+  - [Architecture Overview](#architecture-overview)
+  - [Key Dependencies](#key-dependencies)
+- [Example Editorial Workflow](#example-editorial-workflow)
+- [Project Structure](#project-structure)
+- [Configuration](#configuration)
+  - [Django Settings](#django-settings)
+  - [AllAuth Configuration](#allauth-configuration)
+  - [Summernote Configuration](#summernote-configuration)
+- [Quick Start Guide](#quick-start-guide)
+  - [Prerequisites](#prerequisites)
+  - [Installation Steps](#installation-steps)
+  - [Next Steps](#next-steps)
+- [Deployment on Heroku](#deployment-on-heroku)
+  - [1. Heroku Setup](#1-heroku-setup)
+  - [2. Environment Variables](#2-environment-variables)
+  - [3. Deploy](#3-deploy)
+  - [4. Open Application](#4-open-application)
+- [Testing](#testing)
+  - [Comprehensive Testing Table](#comprehensive-testing-table--frontend--admin-modules)
+    - [Frontend Testing Table](#frontend-testing-table)
+    - [Admin Panel (Backend) Testing Table](#admin-panel-backend-testing-table)
+- [Contributing](#contributing)
+  - [How to Contribute](#how-to-contribute)
+  - [Reporting Issues](#reporting-issues)
+  - [Development Guidelines](#development-guidelines)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+---
+
 ## Live Demo
 
 **[View Live Application](https://blog-djanago-2acbfce559e4.herokuapp.com)**
@@ -432,9 +490,6 @@ Get The Tennis Time running on your local machine in just a few steps.
    python manage.py runserver
    ```
 
-7. **Access the application**
-   - **Blog**: http://127.0.0.1:8000/
-   - **Admin Panel**: http://127.0.0.1:8000/admin/
 
 ### Next Steps
 - Add sample content through the admin panel
@@ -516,48 +571,6 @@ heroku open
 
 ---
 
-## Project Structure
-
-```
-The Tennis Time/
-├── media/                    # Media files
-│   ├── blog_images/         # Blog post images
-│   └── readme_images/       # README documentation screenshots
-├── templates/               # HTML templates
-│   ├── blog/               # Blog templates
-│   ├── about/              # About page templates
-│   └── account/            # Authentication templates
-├── static/                 # Static files (CSS, JS)
-├── blog/                   # Main blog app
-├── about/                  # About page app
-├── config/                 # Project settings
-└── README.md              # This documentation
-```
-
----
-
-## Contributing
-
-We welcome contributions from the tennis community! Here's how you can help improve The Tennis Time.
-
-### How to Contribute
-
-1. **Fork the repository**
-   ```bash
-   git clone https://github.com/fabioeloche/blogs.git
-   ```
-
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-3. **Make your changes**
-   - Follow the existing code style
-   - Add tests for new features
-   - Update documentation as needed
-
-4. **Submit a pull request**
    - Provide a clear description of your changes
    - Include screenshots for UI changes
    - Reference any related issues
@@ -576,16 +589,6 @@ Found a bug or have a feature request? Please:
 - **Documentation**: Update README.md for new features
 - **Testing**: Ensure all tests pass before submitting
 - **Commits**: Use descriptive commit messages
-
----
-
-##  Team
-
-| Role | Name | Contribution |
-|------|------|--------------|
-| **Lead Developer** | Fabio | Full-stack development, design, and deployment |
-| **Content Creator** | Fabio | Editorial content and tennis expertise |
-| **UI/UX Designer** | Fabio | User experience and visual design |
 
 ---
 
