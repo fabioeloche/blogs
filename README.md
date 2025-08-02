@@ -12,14 +12,14 @@
 
 ## Table of Contents
 
-### Getting Started
+### 1. Getting Started
 - [Live Demo](#live-demo)
 - [Quick Start Guide](#quick-start-guide)
   - [Prerequisites](#prerequisites)
   - [Installation Steps](#installation-steps)
   - [Next Steps](#next-steps)
 
-### Project Overview
+### 2. Project Overview
 - [Project Overview](#project-overview)
   - [Key Capabilities](#key-capabilities)
   - [Key Features](#key-features)
@@ -28,13 +28,13 @@
     - [Typography Hierarchy](#typography-hierarchy)
     - [Responsive Layout](#responsive-layout)
 
-### User Experience
+### 3. User Experience & User Stories
 - [User Experience & User Stories](#user-experience--user-stories)
   - [Guest User](#guest-user)
   - [Registered User](#registered-user)
   - [Administrator](#administrator)
 
-### Architecture & Structure
+### 4. Architecture & Technical Details
 - [Project Structure & Interface Overview](#project-structure--interface-overview)
   - [Frontend Pages](#frontend-pages)
     - [Homepage](#homepage)
@@ -46,12 +46,13 @@
     - [Content Management Modules](#content-management-modules)
     - [User Management Modules](#user-management-modules)
     - [Community Management Modules](#community-management-modules)
-- [Project Structure](#project-structure)
 - [Technology Stack](#technology-stack)
   - [Architecture Overview](#architecture-overview)
   - [Key Dependencies](#key-dependencies)
+- [Project Structure](#project-structure)
+  - [Configuration Files](#configuration-files)
 
-### Configuration & Deployment
+### 5. Configuration & Deployment
 - [Configuration](#configuration)
   - [Django Settings](#django-settings)
   - [AllAuth Configuration](#allauth-configuration)
@@ -62,14 +63,14 @@
   - [3. Deploy](#3-deploy)
   - [4. Open Application](#4-open-application)
 
-### Documentation & Testing
+### 6. Documentation & Testing
 - [Example Editorial Workflow](#example-editorial-workflow)
 - [Testing](#testing)
   - [Comprehensive Testing Table](#comprehensive-testing-table--frontend--admin-modules)
     - [Frontend Testing Table](#frontend-testing-table)
     - [Admin Panel (Backend) Testing Table](#admin-panel-backend-testing-table)
 
-### Legal & Credits
+### 7. Legal & Credits
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
@@ -178,9 +179,6 @@ The Tennis Time is designed with three distinct user personas to ensure an optim
 
 ## Project Structure & Interface Overview
 
-
----
-
 ### Frontend Pages
 
 #### Homepage
@@ -203,16 +201,12 @@ Similar to category pages, these pages are found at `/tag/<tag_name>` and filter
 
 ![Tag Page](media/readme_images/Tag-page.png)
 
----
-
 ### Admin Panel Modules
 
 #### Main Admin Interface
 The admin panel is built on Django's native interface, giving editors and content managers a secure and streamlined environment. It features a left-hand sidebar for categorized modules and a real-time "Recent Actions" feed to track editorial activities.
 
 ![Admin Panel](media/readme_images/image_page4_1.png)
-
----
 
 #### Content Management Modules
 
@@ -231,10 +225,8 @@ Tags enable:
 
 Tags are a lightweight yet powerful taxonomy system — especially helpful for dynamic filtering, cross-linking posts, or showcasing related content.
 
-
 ##### Posts Module
 The Posts module is the heart of content creation in The Tennis Time's admin panel. It allows editors to create, update, and publish rich, media-enabled blog articles that appear on the front end.
-
 
 **Use Case:**
 Admins or writers can:
@@ -245,16 +237,12 @@ Admins or writers can:
 
 This module powers the editorial workflow from drafting to publishing, enabling content-rich storytelling for the tennis community.
 
----
-
 #### User Management Modules
 
 ##### Users Module
 The Users module is at the heart of Django's authentication and authorization system. It allows administrators to add and manage user accounts, including login credentials, roles, and permissions.
 
-
 This interface is often used during initial setup or to onboard team members with specific editorial or moderation responsibilities.
-
 
 ##### Categories Module
 The Categories module allows administrators to organize blog content into structured editorial sections. These categories are visible to readers on the front end (e.g., "News", "Features", "Local Focus") and provide an intuitive way to filter posts.
@@ -271,8 +259,6 @@ This module supports:
 - SEO-friendly URL structure for category-specific blog pages
 
 Admins can add new categories or refine existing ones as editorial needs grow — all without needing to touch code.
-
----
 
 #### Community Management Modules
 
@@ -384,6 +370,7 @@ The project includes several configuration files for different deployment and de
 - **`setup_github.ps1`**: Windows script for GitHub repository setup
 - **`setup_github.sh`**: Linux/Mac script for GitHub repository setup
 
+**Core Application Components:**
 - **`blog/`**: Contains the core application logic, models, views, and URLs for the main blog functionality.
 - **`about/`**: A separate app to manage the content of the "About" page.
 - **`templates/`**: Houses all the HTML templates, organized by app.
@@ -411,7 +398,7 @@ The project includes several configuration files for different deployment and de
 
 ---
 
-##  Quick Start Guide
+## Quick Start Guide
 
 Get The Tennis Time running on your local machine in just a few steps.
 
@@ -459,7 +446,6 @@ Get The Tennis Time running on your local machine in just a few steps.
    ```bash
    python manage.py runserver
    ```
-
 
 ### Next Steps
 - Add sample content through the admin panel
@@ -512,10 +498,10 @@ heroku open
 
 | Module / Feature         | Expected Outcome                                                                 | Testing Action                          | Result                                  | Pass/Fail |
 |--------------------------|----------------------------------------------------------------------------------|-----------------------------------------|-----------------------------------------|-----------|
-| Homepage Load            | Loads featured posts with title, image, excerpt, and “Read More” button           | Visit /                                 | Content renders as expected             | ✅ Pass   |
+| Homepage Load            | Loads featured posts with title, image, excerpt, and "Read More" button           | Visit /                                 | Content renders as expected             | ✅ Pass   |
 | Category Filtering       | Filters posts by category                                                        | Click on a category link                | Only relevant category posts shown      | ✅ Pass   |
 | Tag Filtering            | Filters posts by tag                                                             | Click on a tag link                     | Only relevant tagged posts shown        | ✅ Pass   |
-| Post Detail View         | Loads full post with all elements (text, image, comments, etc.)                  | Click “Read More”                       | Full article loads with media           | ✅ Pass   |
+| Post Detail View         | Loads full post with all elements (text, image, comments, etc.)                  | Click "Read More"                       | Full article loads with media           | ✅ Pass   |
 | About Page               | Displays narrative and editorial categories                                      | Visit /about                            | Text, categories, and visuals load correctly | ✅ Pass   |
 | Responsive Layout        | Adapts to all screen sizes                                                       | Resize browser, test on devices         | Fully responsive across viewports       | ✅ Pass   |
 | Browser Compatibility    | Works on Chrome, Firefox, Safari, Edge                                           | Open site in major browsers             | No display or functionality issues      | ✅ Pass   |
@@ -535,7 +521,7 @@ heroku open
 | Users                    | Create users, assign roles                                                       | Admin → Users                           | User accounts function correctly        | ✅ Pass   |
 | Groups                   | Define roles and permission sets                                                | Admin → Groups                          | Roles applied with correct permissions  | ✅ Pass   |
 | Sites                    | Configure domain settings                                                       | Admin → Sites                           | Sites configured without error          | ✅ Pass   |
-| Social Accounts          | View users’ linked social logins                                                 | Admin → Social Accounts                 | Social logins listed correctly          | ✅ Pass   |
+| Social Accounts          | View users' linked social logins                                                 | Admin → Social Accounts                 | Social logins listed correctly          | ✅ Pass   |
 | Social Tokens            | View OAuth2 access and refresh tokens                                            | Admin → Social Application Tokens       | Tokens stored and displayed securely    | ✅ Pass   |
 | Social Applications      | Integrate third-party providers (Google, GitHub, etc.)                           | Admin → Social Applications             | Providers configured and site assignment works | ✅ Pass   |
 
