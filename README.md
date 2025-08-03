@@ -13,65 +13,52 @@
 
 ## Table of Contents
 
-### 1. Getting Started
-- [Live Demo](#live-demo)
-- [Quick Start Guide](#quick-start-guide)
-  - [Prerequisites](#prerequisites)
-  - [Installation Steps](#installation-steps)
-  - [Next Steps](#next-steps)
-
-### 2. Project Overview
-- [Project Overview](#project-overview)
-  - [Key Capabilities](#key-capabilities)
-  - [Key Features](#key-features)
-  - [Design System](#design-system)
-    - [Color Palette](#color-palette)
-    - [Typography Hierarchy](#typography-hierarchy)
-    - [Responsive Layout](#responsive-layout)
-
-### 3. User Experience & User Stories
-- [User Experience & User Stories](#user-experience--user-stories)
-  - [Guest User](#guest-user)
-  - [Registered User](#registered-user)
-  - [Administrator](#administrator)
-
-### 4. Architecture & Technical Details
-- [Project Structure & Interface Overview](#project-structure--interface-overview)
-  - [Frontend Pages](#frontend-pages)
-    - [Homepage](#homepage)
-    - [About Page](#about-page)
-    - [Category Pages](#category-pages)
-    - [Tag Pages](#tag-pages)
-  - [Admin Panel Modules](#admin-panel-modules)
-    - [Main Admin Interface](#main-admin-interface)
-    - [Content Management Modules](#content-management-modules)
-    - [User Management Modules](#user-management-modules)
-    - [Community Management Modules](#community-management-modules)
-- [Technology Stack](#technology-stack)
-  - [Architecture Overview](#architecture-overview)
-  - [Key Dependencies](#key-dependencies)
-
-### 5. Configuration & Deployment
-- [Configuration](#configuration)
-  - [Django Settings](#django-settings)
-  - [AllAuth Configuration](#allauth-configuration)
-  - [Summernote Configuration](#summernote-configuration)
-- [Deployment on Heroku](#deployment-on-heroku)
-  - [1. Heroku Setup](#1-heroku-setup)
-  - [2. Environment Variables](#2-environment-variables)
-  - [3. Deploy](#3-deploy)
-  - [4. Open Application](#4-open-application)
-
-### 6. Documentation & Testing
-- [Example Editorial Workflow](#example-editorial-workflow)
-- [Testing](#testing)
-  - [Comprehensive Testing Table](#comprehensive-testing-table--frontend--admin-modules)
-    - [Frontend Testing Table](#frontend-testing-table)
-    - [Admin Panel (Backend) Testing Table](#admin-panel-backend-testing-table)
-
-### 7. Legal & Credits
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+1. [Live Demo](#live-demo)  
+2. [Quick Start Guide](#quick-start-guide)  
+   - [Prerequisites](#prerequisites)  
+   - [Installation Steps](#installation-steps)  
+   - [Next Steps](#next-steps)  
+3. [Project Overview](#project-overview)  
+   - [Key Capabilities](#key-capabilities)  
+   - [Key Features](#key-features)  
+   - [Design System](#design-system)  
+     - [Color Palette](#color-palette)  
+     - [Typography Hierarchy](#typography-hierarchy)  
+     - [Responsive Layout](#responsive-layout)  
+4. [User Experience & User Stories](#user-experience--user-stories)  
+   - [Guest User](#guest-user)  
+   - [Registered User](#registered-user)  
+   - [Administrator](#administrator)  
+5. [Project Structure & Interface Overview](#project-structure--interface-overview)  
+   - [Frontend Pages](#frontend-pages)  
+     - [Homepage](#homepage)  
+     - [About Page](#about-page)  
+     - [Category Pages](#category-pages)  
+     - [Tag Pages](#tag-pages)  
+   - [Admin Panel Modules](#admin-panel-modules)  
+     - [Main Admin Interface](#main-admin-interface)  
+     - [Content Management](#content-management)  
+     - [User Management](#user-management)  
+     - [Community Management](#community-management)  
+6. [Technology Stack](#technology-stack)  
+   - [Architecture Overview](#architecture-overview)  
+   - [Key Dependencies](#key-dependencies)  
+7. [Example Editorial Workflow](#example-editorial-workflow)  
+8. [Configuration](#configuration)  
+   - [Django Settings](#django-settings)  
+   - [AllAuth Configuration](#allauth-configuration)  
+   - [Summernote Configuration](#summernote-configuration)  
+9. [Deployment on Heroku](#deployment-on-heroku)  
+   - [Heroku Setup](#1-heroku-setup)  
+   - [Environment Variables](#2-environment-variables)  
+   - [Deploy](#3-deploy)  
+   - [Open Application](#4-open-application)  
+10. [Testing](#testing)  
+    - [Comprehensive Testing Table – Frontend & Admin Modules](#comprehensive-testing-table--frontend--admin-modules)  
+      - [Frontend Testing Table](#frontend-testing-table)  
+      - [Admin Panel (Backend) Testing Table](#admin-panel-backend-testing-table)  
+11. [License](#license)  
+12. [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -207,76 +194,68 @@ The admin panel is built on Django's native interface, giving editors and conten
 
 ![Admin Panel](media/readme_images/image_page4_1.png)
 
-#### Content Management Modules
+#### Content Management
 
-##### Tags Module
-The Tags module allows administrators to manage keywords or labels that can be applied to blog posts for better organization and discoverability.
+**Tags Module**  
+- Manages keywords for organizing and filtering posts  
+- Enables tag-based URLs for improved discoverability and SEO  
+- Supports dynamic content linking and filtering  
 
-**Key Fields:**
-- **Name**: The tag's display name (e.g., "Jannik Sinner", "Clay Court", "Strategy").
-- **Slug**: A URL-friendly version of the tag name. It's auto-generated from the name if left blank and used in tag-based URLs like `/tag/roger-federer/`.
-
-**Use Case:**
-Tags enable:
-- **Topic-based filtering**: Users can click tags on posts to view related content.
-- **Author tagging**: Writers can tag posts with their names to create a personal archive.
-- **SEO benefits**: Tags help search engines understand content structure and improve navigation.
-
-Tags are a lightweight yet powerful taxonomy system — especially helpful for dynamic filtering, cross-linking posts, or showcasing related content.
-
-##### Posts Module
-The Posts module is the heart of content creation in The Tennis Time's admin panel. It allows editors to create, update, and publish rich, media-enabled blog articles that appear on the front end.
-
-**Use Case:**
-Admins or writers can:
-- Write full-length posts using a visual editor
-- Easily organize content using tags and categories
-- Upload media directly from the post interface
-- Control what appears as excerpts on homepage/post previews
-
-This module powers the editorial workflow from drafting to publishing, enabling content-rich storytelling for the tennis community.
-
-#### User Management Modules
-
-##### Users Module
-The Users module is at the heart of Django's authentication and authorization system. It allows administrators to add and manage user accounts, including login credentials, roles, and permissions.
-
-This interface is often used during initial setup or to onboard team members with specific editorial or moderation responsibilities.
-
-##### Categories Module
-The Categories module allows administrators to organize blog content into structured editorial sections. These categories are visible to readers on the front end (e.g., "News", "Features", "Local Focus") and provide an intuitive way to filter posts.
-
-**Key Fields:**
-- **Name**: The display name of the category shown on the site.
-- **Slug**: A URL-friendly identifier generated automatically (or manually) from the name (e.g., local-focus). Used in the `/category/<slug>/` path.
-- **Description**: An optional summary that explains what type of posts the category includes.
-
-**Use Case:**
-This module supports:
-- Clear content segmentation for navigation and filtering
-- Easy setup of homepage sections or sidebar filters
-- SEO-friendly URL structure for category-specific blog pages
-
-Admins can add new categories or refine existing ones as editorial needs grow — all without needing to touch code.
-
-#### Community Management Modules
-
-##### Comments Module
-The Comments module provides a centralized interface for moderating user-generated feedback on blog posts. It allows admins to efficiently review, approve, edit, or remove submitted comments.
-
-**Main Interface Elements:**
-- **User**: Shows who submitted the comment (e.g., Fabio).
-- **Post**: Indicates which blog post the comment is attached to (with clickable links for quick access).
-- **Content Preview**: Displays a snippet of the comment content for quick scanning.
-- **Created On**: Shows the timestamp of when the comment was submitted.
-- **Approved Status**: A green check mark indicates the comment is publicly visible; unchecked means it's still in moderation or rejected.
-
-**Sidebar Filters:**
-- **By Approval**: Quickly sort by approved or pending comments.
-- **By Date**: Filter comments by submission date (e.g., past 7 days, this month).
-- **By Post**: View all comments attached to specific posts.
+**Use Cases:**  
+- Filter posts by topic or author  
+- Link related posts automatically  
+- Improve SEO and user navigation  
 
 ---
+
+**Posts Module**  
+- Core tool for writing and publishing blog content  
+- Supports rich media, tags, and categories  
+- Powers homepage excerpts and post previews  
+
+**Use Cases:**  
+- Create and edit articles  
+- Organize posts with metadata  
+- Upload images and set preview content  
+
+---
+
+#### User Management
+
+**Users Module**  
+- Handles user accounts, roles, and permissions  
+- Part of Django's built-in authentication system  
+
+**Use Cases:**  
+- Onboard editors or moderators  
+- Manage access to admin features  
+- Assign role-based permissions  
+
+---
+
+**Categories Module**  
+- Organizes content into thematic sections  
+- Enables structured navigation and filtering  
+- Supports SEO-friendly URLs for category views  
+
+**Use Cases:**  
+- Group posts under defined editorial themes  
+- Power homepage or sidebar filters  
+- Improve content discoverability and hierarchy  
+
+---
+
+#### Community Management
+
+**Comments Module**  
+- Central interface for managing user comments  
+- Allows reviewing, editing, approving, or deleting comments  
+- Shows comment author, content preview, and linked post  
+
+**Use Cases:**  
+- Moderate user feedback efficiently  
+- Remove spam or inappropriate comments  
+- Track community engagement on posts  
 
 ## Technology Stack
 
@@ -481,7 +460,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Django Community**: For the excellent web framework
 - **Bootstrap Team**: For the responsive design framework
 - **Tennis Community**: For inspiration and feedback
-- **Open Source Contributors**: For the amazing tools that made this possible
 
 ---
 
