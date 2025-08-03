@@ -19,10 +19,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from allauth.account import views as allauth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
+    # Custom allauth URLs excluding password reset
+    path('accounts/login/', allauth_views.LoginView.as_view(), name='account_login'),
+    path('accounts/signup/', allauth_views.SignupView.as_view(), name='account_signup'),
+    path('accounts/logout/', allauth_views.LogoutView.as_view(), name='account_logout'),
+    path('accounts/email/', allauth_views.EmailView.as_view(), name='account_email'),
+    path('accounts/confirm-email/', allauth_views.EmailVerificationSentView.as_view(), name='account_email_verification_sent'),
+    path('accounts/confirm-email/<key>/', allauth_views.ConfirmEmailView.as_view(), name='account_confirm_email'),
+    # Exclude password reset URLs - they are now disabled
     path('summernote/', include('django_summernote.urls')),
     path('', include('blog.urls')),
     path('about/', include('about.urls')),
