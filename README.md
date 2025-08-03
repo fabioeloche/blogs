@@ -8,6 +8,7 @@
 
 **The Tennis Time** is a full-stack editorial blog developed with **Django**, tailored for tennis enthusiasts. The platform delivers compelling content like match commentary, club news, and editorial insights through a responsive frontend and a powerful Django admin backend. Editors can manage articles, images, tags, and comments from a secure, modular admin interface.
 
+![Mockup](media/readme_images/mockup.png)
 ---
 
 ## Table of Contents
