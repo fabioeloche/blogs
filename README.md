@@ -194,68 +194,31 @@ The admin panel is built on Django's native interface, giving editors and conten
 
 ![Admin Panel](media/readme_images/image_page4_1.png)
 
-#### Content Management
-
-**Tags Module**  
+#### Tags Module
 - Manages keywords for organizing and filtering posts  
 - Enables tag-based URLs for improved discoverability and SEO  
 - Supports dynamic content linking and filtering  
 
-**Use Cases:**  
-- Filter posts by topic or author  
-- Link related posts automatically  
-- Improve SEO and user navigation  
-
----
-
-**Posts Module**  
+#### Posts Module 
 - Core tool for writing and publishing blog content  
 - Supports rich media, tags, and categories  
 - Powers homepage excerpts and post previews  
 
-**Use Cases:**  
-- Create and edit articles  
-- Organize posts with metadata  
-- Upload images and set preview content  
-
----
-
-#### User Management
-
-**Users Module**  
+#### Users Module
 - Handles user accounts, roles, and permissions  
 - Part of Django's built-in authentication system  
 
-**Use Cases:**  
-- Onboard editors or moderators  
-- Manage access to admin features  
-- Assign role-based permissions  
-
----
-
-**Categories Module**  
+#### Categories Module 
 - Organizes content into thematic sections  
 - Enables structured navigation and filtering  
 - Supports SEO-friendly URLs for category views  
 
-**Use Cases:**  
-- Group posts under defined editorial themes  
-- Power homepage or sidebar filters  
-- Improve content discoverability and hierarchy  
-
----
-
-#### Community Management
-
-**Comments Module**  
+#### Comments Module  
 - Central interface for managing user comments  
 - Allows reviewing, editing, approving, or deleting comments  
-- Shows comment author, content preview, and linked post  
+- Shows comment author, content preview, and linked post 
 
-**Use Cases:**  
-- Moderate user feedback efficiently  
-- Remove spam or inappropriate comments  
-- Track community engagement on posts  
+---
 
 ## Technology Stack
 
