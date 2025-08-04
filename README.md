@@ -30,7 +30,10 @@
      - [Homepage](#homepage)  
      - [About Page](#about-page)  
      - [Category Pages](#category-pages)  
-     - [Tag Pages](#tag-pages)  
+     - [Tag Pages](#tag-pages)
+     - [Tag-Based Navigation](#tag-based-navigation)
+     - [Front-End Comment Management](#front-end-comment-management)
+     - [Related Posts](#related-posts)  
    - [Admin Panel Modules](#admin-panel-modules)  
      - [Main Admin Interface](#main-admin-interface)  
      - [Tags Module](#tags-module)  
@@ -76,11 +79,14 @@ Experience the full functionality of The Tennis Time blog with real content and 
 The Tennis Time offers structured editorial coverage of global and local tennis with a content-first approach. Built with modern web technologies, it provides a comprehensive platform for tennis journalism and community engagement.
 
 ### Key Capabilities
-- **Dynamic content filtering** by category and tag
-- **Admin-driven publishing system** with WYSIWYG editor
-- **User authentication and comment moderation** via Django Allauth
-- **SEO-optimized** content structure and URLs
-- **Mobile-first responsive design** for optimal viewing on all devices
+- **Display related posts** on each post page to encourage further reading  
+- **Tag-based navigation** to easily explore similar articles  
+- **Front-end comment management** – users can create, edit, and delete comments directly from the post page  
+- **Dynamic content filtering** by category and tag  
+- **Admin-controlled publishing system** with a WYSIWYG editor  
+- **User authentication and comment moderation** powered by Django Allauth  
+- **SEO-optimized** content structure and URLs  
+- **Mobile-first, responsive design** for optimal viewing across all devices  
 
 ### Key Features
 
@@ -187,6 +193,25 @@ These pages are accessed via the URL `/category/<category_name>` and filter post
 Similar to category pages, these pages are found at `/tag/<tag_name>` and filter posts by a specific player or topic, such as "Jannik Sinner". Each tag links to a filtered content page to help users find related content.
 
 ![Tag Page](media/readme_images/Tag-page.png)
+
+#### Related Posts  
+Each post page includes a section that **displays related articles** based on shared tags or categories. This feature encourages deeper engagement by guiding readers to similar content.  
+
+![Related Posts](media/readme_images/relatedpost.png)
+
+
+#### Tag-Based Navigation  
+Every article includes **clickable tags** that allow users to explore other posts with the same tag. This improves site navigation and helps users discover content relevant to their interests.  
+
+![Tag Navigation](media/readme_images/tag.png)
+
+
+#### Front-End Comment Management  
+Users can **create, edit, and delete comments directly on the post page**. The interface is intuitive and provides a seamless interaction without needing to access the admin panel.  
+
+![Comment Management](media/readme_images/comment.png)
+
+---
 
 ### Admin Panel Modules
 
