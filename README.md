@@ -61,7 +61,7 @@
 10. [Testing](#testing)  
     - [Frontend Testing Table](#frontend-testing-table)  
     - [Admin Panel (Backend) Testing Table](#admin-panel-backend-testing-table)  
-11. [License](#license)  
+11. [Agile Methodology & Workflow](#agile-methodology-&-workflow)  
 12. [Acknowledgments](#acknowledgments)
 
 ---
@@ -438,9 +438,39 @@ heroku open
 
 ---
 
-## License
+## Agile Methodology & Workflow
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project followed an Agile development approach, structured into three one-week sprints. Features were planned, developed, reviewed, and improved iteratively, with tasks tracked via Trello board.
+
+#### Sprint Breakdown
+- **Sprint 1:** Implemented the homepage layout, post detail view, and category filtering.
+- **Sprint 2:** Developed the front-end comment system with create, edit, and delete functionality.
+- **Sprint 3:** Added tag-based navigation, related post display, and improved filtering functionality.
+
+#### Task & Issue Tracking
+- Each feature and fix was tracked using GitHub Issues.
+- Labels such as `sprint-1`, `enhancement`, `bug`, and `user-story` were used to organize the work.
+- The GitHub history reflects a clear chronological evolution of features.
+
+#### Trello Board
+A **Trello board** was used to manage sprint planning and task flow using a Kanban-style system:
+- Columns included: `Backlog`, `Sprint 1`, `Sprint 2`, `Under Review`, and `Done`.
+- Each task was moved across columns to reflect its development status.
+
+#### Retrospective & Improvements
+At the end of each sprint, a brief retrospective was conducted to assess:
+- What went well (e.g., steady progress and timely feature delivery).
+- What didn’t work as expected (e.g., filtering logic needing cleanup).
+- What to improve in the following sprint (e.g., more structured naming in commits and file organization).
+
+#### Evidence in the Repository
+- GitHub Issues used actively for tracking progress, bugs, and tasks.
+- Trello board showing sprint planning and real-time task progress.
+- Features implemented in a logical sprint-based sequence.
+- README updated progressively to reflect the project's growth.
+
+Agile principles such as iterative development, continuous feedback, and incremental delivery were applied throughout the project.
+
 
 ---
 
