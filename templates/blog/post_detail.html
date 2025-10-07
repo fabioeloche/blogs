@@ -280,6 +280,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 })
                 .then(async response => {
+                    // If Django redirected (e.g., login required), follow it
+                    if (response.redirected) {
+                        window.location.href = response.url;
+                        return { ok: false, data: { success: false, message: 'Redirecting...' } };
+                    }
                     // Handle non-OK and non-JSON responses gracefully
                     let data;
                     try {
