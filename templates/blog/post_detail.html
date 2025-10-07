@@ -328,7 +328,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    showMessage('danger', 'An error occurred while deleting the comment.');
+                    // Graceful fallback: navigate to server-rendered delete confirmation
+                    showMessage('danger', 'An error occurred while deleting the comment. Redirecting to confirmation...');
+                    window.location.href = `/comment/${commentId}/delete/`;
                 });
             }
         });
