@@ -152,6 +152,8 @@
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-paper-plane me-2"></i>Submit Comment
                             </button>
+                            <!-- Single inline feedback area for comment actions -->
+                            <div id="comment-action-msg" class="mt-3"></div>
                         </form>
                     </div>
                     <hr>
@@ -230,40 +232,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Delete comment functionality
     function showMessage(kind, message) {
+        // Always render feedback just below the Submit button
+        const container = document.getElementById('comment-action-msg');
+        if (!container) return;
+
+        // Reset and show a single alert
+        container.innerHTML = '';
         const alert = document.createElement('div');
         alert.className = `alert alert-${kind} alert-dismissible fade show`;
         alert.innerHTML = `
             ${message}
             <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button>
         `;
-
-        // Prefer to show inside the Comments section for visibility
-        let targetBody = null;
-        const cards = document.querySelectorAll('.card');
-        for (const card of cards) {
-            const header = card.querySelector('.card-header h4');
-            if (header && /Comments \(/i.test(header.textContent || '')) {
-                targetBody = card.querySelector('.card-body') || card;
-                break;
-            }
+        container.appendChild(alert);
+        if (container.scrollIntoView) {
+            container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
-
-        if (targetBody) {
-            targetBody.insertBefore(alert, targetBody.firstChild);
-            return;
-        }
-
-        // Fallback: global messages container at top of the page
-        let messagesContainer = document.querySelector('.messages');
-        if (!messagesContainer) {
-            messagesContainer = document.createElement('div');
-            messagesContainer.className = 'messages';
-            const main = document.querySelector('main.container');
-            if (main) {
-                main.insertBefore(messagesContainer, main.firstChild);
-            }
-        }
-        messagesContainer.appendChild(alert);
     }
     const deleteButtons = document.querySelectorAll('.delete-comment-btn');
     
@@ -315,36 +299,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(({ ok, data }) => {
                     if (ok && data.success) {
                         const commentElement = document.getElementById(`comment-${commentId}`);
-                        if (commentElement) {
-                            commentElement.remove();
-                        }
-                        
+                        if (commentElement) commentElement.remove();
+
                         // Update comment count
                         const commentCount = document.querySelectorAll('.comment-item').length;
                         const countElement = document.querySelector('.card-header h4');
                         if (countElement) {
                             countElement.innerHTML = `<i class=\"fas fa-comments me-2\"></i>Comments (${commentCount})`;
                         }
-                        
-                        // Show success message
-                        const alert = document.createElement('div');
-                        alert.className = 'alert alert-success alert-dismissible fade show';
-                        alert.innerHTML = `
-                            ${data.message}
-                            <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button>
-                        `;
-                        
-                        // Append to messages container if present; otherwise create one
-                        let messagesContainer = document.querySelector('.messages');
-                        if (!messagesContainer) {
-                            messagesContainer = document.createElement('div');
-                            messagesContainer.className = 'messages';
-                            const main = document.querySelector('main.container');
-                            if (main) {
-                                main.insertBefore(messagesContainer, main.firstChild);
-                            }
-                        }
-                        messagesContainer.appendChild(alert);
+
+                        // Single success message just below the submit button
+                        showMessage('success', data.message || 'Comment deleted successfully.');
                     } else {
                         showMessage('danger', (data && data.message) ? data.message : 'Failed to delete comment.');
                     }
