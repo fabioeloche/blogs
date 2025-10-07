@@ -234,8 +234,26 @@ document.addEventListener('DOMContentLoaded', function() {
         alert.className = `alert alert-${kind} alert-dismissible fade show`;
         alert.innerHTML = `
             ${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button>
         `;
+
+        // Prefer to show inside the Comments section for visibility
+        let targetBody = null;
+        const cards = document.querySelectorAll('.card');
+        for (const card of cards) {
+            const header = card.querySelector('.card-header h4');
+            if (header && /Comments \(/i.test(header.textContent || '')) {
+                targetBody = card.querySelector('.card-body') || card;
+                break;
+            }
+        }
+
+        if (targetBody) {
+            targetBody.insertBefore(alert, targetBody.firstChild);
+            return;
+        }
+
+        // Fallback: global messages container at top of the page
         let messagesContainer = document.querySelector('.messages');
         if (!messagesContainer) {
             messagesContainer = document.createElement('div');
