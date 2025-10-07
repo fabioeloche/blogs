@@ -152,6 +152,8 @@
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-paper-plane me-2"></i>Submit Comment
                             </button>
+                            <!-- Inline action feedback area (shows after delete) -->
+                            <div id="comment-action-msg" class="mt-3"></div>
                         </form>
                     </div>
                     <hr>
@@ -315,36 +317,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(({ ok, data }) => {
                     if (ok && data.success) {
                         const commentElement = document.getElementById(`comment-${commentId}`);
-                        if (commentElement) {
-                            commentElement.remove();
-                        }
-                        
-                        // Update comment count
-                        const commentCount = document.querySelectorAll('.comment-item').length;
-                        const countElement = document.querySelector('.card-header h4');
-                        if (countElement) {
-                            countElement.innerHTML = `<i class=\"fas fa-comments me-2\"></i>Comments (${commentCount})`;
-                        }
-                        
-                        // Show success message
+
+                        // Build success alert to insert right where the comment was
                         const alert = document.createElement('div');
                         alert.className = 'alert alert-success alert-dismissible fade show';
                         alert.innerHTML = `
                             ${data.message}
                             <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button>
                         `;
-                        
-                        // Append to messages container if present; otherwise create one
-                        let messagesContainer = document.querySelector('.messages');
-                        if (!messagesContainer) {
-                            messagesContainer = document.createElement('div');
-                            messagesContainer.className = 'messages';
-                            const main = document.querySelector('main.container');
-                            if (main) {
-                                main.insertBefore(messagesContainer, main.firstChild);
+
+                        if (commentElement && commentElement.parentElement) {
+                            // Insert the alert immediately after the comment, then remove the comment
+                            const parent = commentElement.parentElement;
+                            if (commentElement.nextSibling) {
+                                parent.insertBefore(alert, commentElement.nextSibling);
+                            } else {
+                                parent.appendChild(alert);
                             }
+                            commentElement.remove();
+                            // Bring the alert into view for visibility
+                            if (alert.scrollIntoView) {
+                                alert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        } else {
+                            // Fallback to comments list top
+                            const list = document.querySelector('.comments-list') || document.querySelector('.card-body');
+                            if (list) list.insertBefore(alert, list.firstChild);
                         }
-                        messagesContainer.appendChild(alert);
+
+                        // Also show a compact success line just below the submit button
+                        const actionMsg = document.getElementById('comment-action-msg');
+                        if (actionMsg) {
+                            actionMsg.className = 'alert alert-success py-2 px-3 my-3';
+                            actionMsg.textContent = data.message || 'Your comment was deleted.';
+                        }
+
+                        // Update comment count
+                        const commentCount = document.querySelectorAll('.comment-item').length;
+                        const countElement = document.querySelector('.card-header h4');
+                        if (countElement) {
+                            countElement.innerHTML = `<i class=\"fas fa-comments me-2\"></i>Comments (${commentCount})`;
+                        }
                     } else {
                         showMessage('danger', (data && data.message) ? data.message : 'Failed to delete comment.');
                     }
