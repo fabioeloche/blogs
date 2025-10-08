@@ -20,18 +20,20 @@
                     <h5 class="text-muted mb-3">
                         <i class="fas fa-envelope me-2"></i>{% trans "Current Email Address" %}
                     </h5>
-                    <div class="alert alert-light border">
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-envelope text-info me-3" style="font-size: 2rem;"></i>
-                            <div class="flex-grow-1">
-                                <strong style="font-size: 1.1rem;">{{ user.email }}</strong>
-                                <span class="badge bg-success ms-2">
-                                    <i class="fas fa-check me-1"></i>{% trans "Active" %}
-                                </span>
-                                <p class="text-muted mb-0 mt-2">
-                                    <i class="fas fa-info-circle me-1"></i>
-                                    This is the email address currently associated with your account.
-                                </p>
+                    <div class="card border-info">
+                        <div class="card-body bg-light">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-envelope text-info me-3" style="font-size: 2rem;"></i>
+                                <div class="flex-grow-1">
+                                    <strong style="font-size: 1.1rem;">{{ user.email }}</strong>
+                                    <span class="badge bg-success ms-2">
+                                        <i class="fas fa-check me-1"></i>{% trans "Active" %}
+                                    </span>
+                                    <p class="text-muted mb-0 mt-2">
+                                        <i class="fas fa-info-circle me-1"></i>
+                                        This is the email address currently associated with your account.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
