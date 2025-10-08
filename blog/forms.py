@@ -2,50 +2,63 @@
 Forms for the blog application.
 """
 from django import forms
+from django.contrib.auth import get_user_model
 from .models import Comment
+
+User = get_user_model()
 
 
 class CommentForm(forms.ModelForm):
-    """
-    Form for creating and editing comments.
-
-    Attributes:
-        content: Text area for comment content with custom styling
-    """
-    content = forms.CharField(
-        widget=forms.Textarea(attrs={
-            'class': 'form-control',
-            'rows': 4,
-            'placeholder': 'Share your thoughts...',
-            'style': 'resize: vertical;'
-        }),
-        label='Comment',
-        help_text='Your comment will be reviewed before being published.'
-    )
-
+    """Form for creating and editing comments."""
+    
     class Meta:
         model = Comment
         fields = ['content']
+        widgets = {
+            'content': forms.Textarea(attrs={
+                'rows': 4,
+                'placeholder': 'Write your comment here...',
+            }),
+        }
 
-    def __init__(self, *args, **kwargs):
-        """Initialize form with custom styling."""
-        super().__init__(*args, **kwargs)
-        self.fields['content'].widget.attrs.update({
+
+class EmailChangeForm(forms.Form):
+    """Form for changing user email address."""
+    
+    new_email = forms.EmailField(
+        label='New Email Address',
+        max_length=254,
+        widget=forms.EmailInput(attrs={
             'class': 'form-control',
-            'rows': 4,
-            'placeholder': 'Share your thoughts...',
-            'style': 'resize: vertical;'
+            'placeholder': 'Enter your new email address',
+        }),
+        help_text='Enter the new email address you want to use for your account.'
+    )
+    
+    confirm_email = forms.EmailField(
+        label='Confirm New Email',
+        max_length=254,
+        widget=forms.EmailInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Confirm your new email address',
         })
-
-    def clean_content(self):
-        """Validate comment content."""
-        content = self.cleaned_data.get('content')
-        if not content or len(content.strip()) < 10:
-            raise forms.ValidationError(
-                'Comment must be at least 10 characters long.'
-            )
-        if len(content) > 1000:
-            raise forms.ValidationError(
-                'Comment cannot exceed 1000 characters.'
-            )
-        return content.strip()
+    )
+    
+    def clean(self):
+        cleaned_data = super().clean()
+        new_email = cleaned_data.get('new_email')
+        confirm_email = cleaned_data.get('confirm_email')
+        
+        if new_email and confirm_email:
+            if new_email != confirm_email:
+                raise forms.ValidationError(
+                    "The two email addresses don't match. Please try again."
+                )
+            
+            # Check if email is already in use
+            if User.objects.filter(email=new_email).exists():
+                raise forms.ValidationError(
+                    "This email address is already in use. Please use a different email."
+                )
+        
+        return cleaned_data

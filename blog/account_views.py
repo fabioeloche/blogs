@@ -6,14 +6,36 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib import messages
 from django.views.decorators.http import require_POST
+from .forms import EmailChangeForm
 
 
 @login_required
 def account_settings(request):
     """
-    Display account settings page with user information.
+    Display account settings page with user information and handle email changes.
     """
-    return render(request, 'account/email.html')
+    if request.method == 'POST':
+        form = EmailChangeForm(request.POST)
+        if form.is_valid():
+            new_email = form.cleaned_data['new_email']
+            old_email = request.user.email
+            
+            # Update user email
+            request.user.email = new_email
+            request.user.save()
+            
+            messages.success(
+                request,
+                f'Your email has been successfully changed from {old_email} to {new_email}.'
+            )
+            return redirect('account_settings')
+    else:
+        form = EmailChangeForm()
+    
+    context = {
+        'form': form,
+    }
+    return render(request, 'account/email.html', context)
 
 
 @login_required

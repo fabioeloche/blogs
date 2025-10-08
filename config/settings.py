@@ -177,9 +177,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # Disable password reset functionality
 ACCOUNT_PASSWORD_RESET_ENABLED = False
 
-# Disable email change/add functionality to prevent errors
-ACCOUNT_CHANGE_EMAIL = False
-
 # Email backend configuration
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

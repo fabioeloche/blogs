@@ -18,7 +18,7 @@
                 <!-- Current Email Address -->
                 <div class="mb-4">
                     <h5 class="text-muted mb-3">
-                        <i class="fas fa-envelope me-2"></i>{% trans "Email Address" %}
+                        <i class="fas fa-envelope me-2"></i>{% trans "Current Email Address" %}
                     </h5>
                     <div class="alert alert-light border">
                         <div class="d-flex align-items-center">
@@ -30,22 +30,67 @@
                                 </span>
                                 <p class="text-muted mb-0 mt-2">
                                     <i class="fas fa-info-circle me-1"></i>
-                                    This is the email address associated with your account.
+                                    This is the email address currently associated with your account.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="alert alert-warning border-0 mt-3">
-                        <div class="d-flex">
-                            <i class="fas fa-lightbulb me-3 mt-1"></i>
-                            <div>
-                                <strong>Need to change your email?</strong>
-                                <p class="mb-0">Please contact the site administrator to update your email address.</p>
-                            </div>
+                </div>
+
+                <!-- Change Email Form -->
+                <div class="mb-4">
+                    <h5 class="text-muted mb-3">
+                        <i class="fas fa-edit me-2"></i>{% trans "Change Email Address" %}
+                    </h5>
+                    <div class="card bg-light border">
+                        <div class="card-body">
+                            <form method="post" action="{% url 'account_settings' %}">
+                                {% csrf_token %}
+                                
+                                <div class="mb-3">
+                                    <label for="{{ form.new_email.id_for_label }}" class="form-label">
+                                        <i class="fas fa-at me-1"></i>{{ form.new_email.label }}
+                                    </label>
+                                    {{ form.new_email }}
+                                    {% if form.new_email.errors %}
+                                        <div class="text-danger mt-1">
+                                            {{ form.new_email.errors }}
+                                        </div>
+                                    {% endif %}
+                                    {% if form.new_email.help_text %}
+                                        <small class="form-text text-muted">{{ form.new_email.help_text }}</small>
+                                    {% endif %}
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="{{ form.confirm_email.id_for_label }}" class="form-label">
+                                        <i class="fas fa-check-double me-1"></i>{{ form.confirm_email.label }}
+                                    </label>
+                                    {{ form.confirm_email }}
+                                    {% if form.confirm_email.errors %}
+                                        <div class="text-danger mt-1">
+                                            {{ form.confirm_email.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+
+                                {% if form.non_field_errors %}
+                                    <div class="alert alert-danger">
+                                        {{ form.non_field_errors }}
+                                    </div>
+                                {% endif %}
+
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-info">
+                                        <i class="fas fa-save me-2"></i>{% trans "Update Email Address" %}
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
+
+                <hr class="my-4">
 
                 <!-- Account Information -->
                 <div class="mb-4">
