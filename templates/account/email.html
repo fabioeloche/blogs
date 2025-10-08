@@ -18,102 +18,69 @@
                 <!-- Current Email Address -->
                 <div class="mb-4">
                     <h5 class="text-muted mb-3">
-                        <i class="fas fa-user-circle me-2"></i>{% trans "Current Email Address" %}
+                        <i class="fas fa-user-circle me-2"></i>{% trans "Your Email Address" %}
                     </h5>
                     <div class="alert alert-light border">
                         <div class="d-flex align-items-center">
-                            <i class="fas fa-envelope text-info me-3"></i>
+                            <i class="fas fa-envelope text-info me-3" style="font-size: 2rem;"></i>
                             <div>
-                                <strong>{{ user.email }}</strong>
-                                {% if user.emailaddress_set.all.0.verified %}
-                                    <span class="badge bg-success ms-2">
-                                        <i class="fas fa-check me-1"></i>{% trans "Verified" %}
-                                    </span>
-                                {% else %}
-                                    <span class="badge bg-warning ms-2">
-                                        <i class="fas fa-exclamation-triangle me-1"></i>{% trans "Unverified" %}
-                                    </span>
-                                {% endif %}
+                                <strong style="font-size: 1.1rem;">{{ user.email }}</strong>
+                                <span class="badge bg-success ms-2">
+                                    <i class="fas fa-check me-1"></i>{% trans "Active" %}
+                                </span>
+                                <p class="text-muted mb-0 mt-2">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    This is the email address associated with your account.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Add Email Form -->
+                <!-- Account Information -->
                 <div class="mb-4">
                     <h5 class="text-muted mb-3">
-                        <i class="fas fa-plus-circle me-2"></i>{% trans "Add Email Address" %}
+                        <i class="fas fa-shield-alt me-2"></i>{% trans "Account Information" %}
                     </h5>
-                    <form method="post" action="{% url 'account_email' %}">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="col-md-8">
-                                {{ add_email_form.email|as_crispy_field }}
-                            </div>
-                            <div class="col-md-4 d-flex align-items-end">
-                                <button name="action_add" type="submit" class="btn btn-info w-100">
-                                    <i class="fas fa-plus me-2"></i>{% trans "Add Email" %}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Email Addresses List -->
-                {% if user.emailaddress_set.all %}
-                <div class="mb-4">
-                    <h5 class="text-muted mb-3">
-                        <i class="fas fa-list me-2"></i>{% trans "Email Addresses" %}
-                    </h5>
-                    <form method="post" action="{% url 'account_email' %}">
-                        {% csrf_token %}
-                        <div class="list-group">
-                            {% for emailaddress in user.emailaddress_set.all %}
-                            <div class="list-group-item d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-envelope text-muted me-3"></i>
-                                    <div>
-                                        <strong>{{ emailaddress.email }}</strong>
-                                        {% if emailaddress.verified %}
-                                            <span class="badge bg-success ms-2">
-                                                <i class="fas fa-check me-1"></i>{% trans "Verified" %}
-                                            </span>
-                                        {% else %}
-                                            <span class="badge bg-warning ms-2">
-                                                <i class="fas fa-exclamation-triangle me-1"></i>{% trans "Unverified" %}
-                                            </span>
-                                        {% endif %}
-                                        {% if emailaddress.primary %}
-                                            <span class="badge bg-primary ms-2">
-                                                <i class="fas fa-star me-1"></i>{% trans "Primary" %}
-                                            </span>
-                                        {% endif %}
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-user text-primary me-3"></i>
+                                        <div>
+                                            <small class="text-muted d-block">Username</small>
+                                            <strong>{{ user.username|default:"Not set" }}</strong>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="btn-group" role="group">
-                                    {% if not emailaddress.verified %}
-                                        <button class="btn btn-sm btn-outline-info" type="submit" name="action_send" value="{{ emailaddress.email }}">
-                                            <i class="fas fa-paper-plane me-1"></i>{% trans "Re-send Verification" %}
-                                        </button>
-                                    {% endif %}
-                                    {% if not emailaddress.primary %}
-                                        <button class="btn btn-sm btn-outline-primary" type="submit" name="action_primary" value="{{ emailaddress.email }}">
-                                            <i class="fas fa-star me-1"></i>{% trans "Make Primary" %}
-                                        </button>
-                                    {% endif %}
-                                    <button class="btn btn-sm btn-outline-danger" type="submit" name="action_remove" value="{{ emailaddress.email }}">
-                                        <i class="fas fa-trash me-1"></i>{% trans "Remove" %}
-                                    </button>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-calendar-alt text-success me-3"></i>
+                                        <div>
+                                            <small class="text-muted d-block">Member Since</small>
+                                            <strong>{{ user.date_joined|date:"M d, Y" }}</strong>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            {% endfor %}
                         </div>
-                    </form>
+                    </div>
                 </div>
-                {% endif %}
 
-                <!-- Back to Profile -->
-                <div class="text-center">
+                <!-- Help Information -->
+                <div class="alert alert-info border-0">
+                    <div class="d-flex">
+                        <i class="fas fa-lightbulb me-3 mt-1"></i>
+                        <div>
+                            <strong>Need to change your email?</strong>
+                            <p class="mb-0">Please contact the site administrator to update your email address.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back to Home -->
+                <div class="text-center mt-4">
                     <a href="{% url 'blog:post_list' %}" class="btn btn-outline-secondary">
                         <i class="fas fa-arrow-left me-2"></i>{% trans "Back to Home" %}
                     </a>

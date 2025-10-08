@@ -28,9 +28,9 @@ SECRET_KEY = config(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['blog-djanago-2acbfce559e4.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'blog-djanago-2acbfce559e4.herokuapp.com']
 
 
 # Application Definition
@@ -176,6 +176,12 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Disable password reset functionality
 ACCOUNT_PASSWORD_RESET_ENABLED = False
+
+# Disable email change/add functionality to prevent errors
+ACCOUNT_CHANGE_EMAIL = False
+
+# Email backend configuration
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
