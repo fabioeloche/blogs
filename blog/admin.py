@@ -36,7 +36,7 @@ class PostAdmin(SummernoteModelAdmin):
     Admin configuration for Post model with Summernote integration.
     """
     list_display = ('title', 'author', 'category',
-                    'created_on', 'status', 'get_comment_count')
+                    'created_on', 'status', 'get_image_type', 'get_comment_count')
     list_filter = ('created_on', 'category', 'tags', 'author')
     search_fields = ('title', 'content', 'excerpt', 'author__username')
     prepopulated_fields = {'slug': ('title',)}
@@ -50,7 +50,12 @@ class PostAdmin(SummernoteModelAdmin):
             'fields': ('title', 'slug', 'author', 'excerpt')
         }),
         ('Content', {
-            'fields': ('content', 'external_url_image_link', 'image'),
+            'fields': ('content',),
+            'classes': ('wide',)
+        }),
+        ('Post Image', {
+            'fields': ('external_url_image_link', 'image'),
+            'description': 'Use either an external image URL (recommended) or upload an image file. External URL takes priority if both are provided.',
             'classes': ('wide',)
         }),
         ('Categorization', {
@@ -66,6 +71,16 @@ class PostAdmin(SummernoteModelAdmin):
     def status(self, obj):
         return 'Published' if obj.created_on else 'Draft'
     status.short_description = 'Status'
+
+    def get_image_type(self, obj):
+        """Return the type of image used for this post."""
+        if obj.external_url_image_link:
+            return 'External URL'
+        elif obj.image:
+            return 'Uploaded'
+        else:
+            return 'No Image'
+    get_image_type.short_description = 'Image Type'
 
     def get_comment_count(self, obj):
         """Return the number of comments for this post."""

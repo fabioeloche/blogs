@@ -130,6 +130,29 @@ class Post(models.Model):
         """Return only approved comments for this post."""
         return self.comments.filter(approved=True)
 
+    def get_image_url(self):
+        """
+        Return the best available image URL for this post.
+        Prioritizes external URL over uploaded image.
+
+        Returns:
+            str: Image URL or None if no image is available
+        """
+        if self.external_url_image_link:
+            return self.external_url_image_link
+        elif self.image:
+            return self.image.url
+        return None
+
+    def has_image(self):
+        """
+        Check if this post has any image (external or uploaded).
+
+        Returns:
+            bool: True if post has an image, False otherwise
+        """
+        return bool(self.external_url_image_link or self.image)
+
     def get_related_posts(self, limit=3):
         """
         Get related posts based on category and tags.

@@ -33,13 +33,9 @@
         </div>
         
         <!-- Post Image -->
-        {% if post.external_url_image_link %}
+        {% if post.get_image_url %}
             <div class="mb-4">
-                <img src="{{ post.external_url_image_link }}" class="img-fluid rounded shadow" alt="{{ post.title }}">
-            </div>
-        {% elif post.image %}
-            <div class="mb-4">
-                <img src="{{ post.image.url }}" class="img-fluid rounded shadow" alt="{{ post.title }}">
+                <img src="{{ post.get_image_url }}" class="img-fluid rounded shadow" alt="{{ post.title }}">
             </div>
         {% endif %}
         
@@ -99,8 +95,8 @@
                         {% for related_post in related_posts %}
                             <div class="col-lg-4 col-md-6 mb-3">
                                 <div class="card h-100 border-0 shadow-sm related-post-card">
-                                    {% if related_post.image %}
-                                        <img src="{{ related_post.image.url }}" 
+                                    {% if related_post.get_image_url %}
+                                        <img src="{{ related_post.get_image_url }}" 
                                              class="card-img-top" 
                                              alt="{{ related_post.title }}"
                                              style="height: 150px; object-fit: cover;">
