@@ -440,36 +440,123 @@ heroku open
 
 ## Agile Methodology & Workflow
 
-This project followed an Agile development approach, structured into three one-week sprints. Features were planned, developed, reviewed, and improved iteratively, with tasks tracked via Trello board.
+This project was developed following Agile methodology with a Scrum-inspired sprint structure. The workflow was managed using Trello as an Agile tool, ensuring consistent sprint planning, progress tracking, and retrospectives.
 
-#### Sprint Breakdown
-- **Sprint 1:** Implemented the homepage layout, post detail view, and category filtering.
-- **Sprint 2:** Developed the front-end comment system with create, edit, and delete functionality.
-- **Sprint 3:** Added tag-based navigation, related post display, and improved filtering functionality.
+### Tools Used
+- **Trello** – Task management, sprint tracking, retrospectives.
+- **GitHub Issues & Commits** – Tracking bugs, linking commits, and ensuring iterative delivery.
+- **GitHub Projects** (optional) – Milestone and backlog visualization.
 
-#### Task & Issue Tracking
-- Each feature and fix was tracked using GitHub Issues.
-- Labels such as `sprint-1`, `enhancement`, `bug`, and `user-story` were used to organize the work.
-- The GitHub history reflects a clear chronological evolution of features.
+### Trello Board Overview
 
-#### Trello Board
-A **Trello board** was used to manage sprint planning and task flow using a Kanban-style system:
-- Columns included: `Backlog`, `Sprint 1`, `Sprint 2`, `Under Review`, and `Done`.
-- Each task was moved across columns to reflect its development status.
+![Trello Workflow](media/readme_images/trello_Workflow.png)
 
-#### Retrospective & Improvements
-At the end of each sprint, a brief retrospective was conducted to assess:
-- What went well (e.g., steady progress and timely feature delivery).
-- What didn’t work as expected (e.g., filtering logic needing cleanup).
-- What to improve in the following sprint (e.g., more structured naming in commits and file organization).
+The Trello board titled "Blogs Development – Agile Sprints" visualizes the entire workflow, from planning to deployment. Lists on the board represent each sprint and its stage:
 
-#### Evidence in the Repository
-- GitHub Issues used actively for tracking progress, bugs, and tasks.
-- Trello board showing sprint planning and real-time task progress.
-- Features implemented in a logical sprint-based sequence.
-- README updated progressively to reflect the project's growth.
+| List Name | Description |
+|-----------|-------------|
+| **Backlog** | Product backlog with user stories, features, and enhancements planned for development. |
+| **Sprint 1 – Setup** | Environment setup, database configuration, and core authentication. |
+| **Sprint 2 – UI** | UI/UX design improvements and CRUD feature enhancement. |
+| **Sprint 3 – Testing** | Testing, CI setup, deployment, and documentation finalization. |
+| **Under Review / QA** | Work completed and pending review/testing. |
+| **Done** | Fully verified and accepted tasks. |
 
-Agile principles such as iterative development, continuous feedback, and incremental delivery were applied throughout the project.
+Screenshots of the Trello board showing the completed sprints can be found in the `/media/readme_images/` folder. Each card includes detailed user stories, acceptance criteria, and checklists.
+
+### Sprint Breakdown
+
+#### Backlog (Planning Phase)
+
+![Trello Backlog](media/readme_images/trello_backlog.png)
+
+This list captured all core features and user stories before sprint allocation.
+
+| Card | Description |
+|------|-------------|
+| **User Authentication** | Implement secure login/logout using Flask-Login or JWT. |
+| **Blog CRUD Features** | Enable creating, editing, and deleting blog posts. |
+| **Post Search Functionality** | Add keyword search and filtering for blog posts. |
+| **UI Design Enhancements** | Improve overall site design and responsiveness. |
+| **Testing & Deployment** | Plan for automated testing and cloud deployment. |
+
+All backlog cards contained user stories, acceptance criteria, and task checklists, providing full visibility of scope before sprint distribution.
+
+#### Sprint 1 – Setup & Core Features
+
+![Trello Sprint 1](media/readme_images/trello_sprint1.png)
+
+**Goal:** Establish the development environment, configure the database, and implement user authentication.
+
+| Card | Outcome |
+|------|---------|
+| **Project Scaffolding** | Repo initialized with Flask app, folder structure, and README. |
+| **Database Setup** | Configured with migrations and test data. |
+| **Authentication Backend** | Login/logout routes and session handling implemented. |
+
+**Sprint Retrospective – Sprint 1**  
+Reflected on setup speed, testing delays, and improved planning for Sprint 2.
+
+**Deliverables:** Running Flask app, database connection, working login/logout, README setup guide.
+
+#### Sprint 2 – UI & Content Management
+
+![Trello Sprint 2](media/readme_images/trello_sprint2.png)
+
+**Goal:** Enhance UI/UX and implement CRUD and search functionality for blog content.
+
+| Card | Outcome |
+|------|---------|
+| **Post Editor UI** | Created and edit post forms with validation. |
+| **Post List & Detail Views** | Added responsive list/detail pages for posts. |
+| **Search & Filter** | Enabled keyword search and author/date filtering. |
+
+**Sprint Retrospective – Sprint 2**  
+Focused on improving code review speed and time estimation for Sprint 3.
+
+**Deliverables:** Complete CRUD functionality, user-friendly interface, and improved navigation.
+
+#### Sprint 3 – Testing, CI & Deployment
+
+![Trello Sprint 3](media/readme_images/trello_sprint3.png)
+
+**Goal:** Test all features, integrate CI/CD, and deploy the final app to production.
+
+| Card | Outcome |
+|------|---------|
+| **Unit & Integration Tests** | Automated tests covering key routes and models. |
+| **CI Setup** | GitHub Actions pipeline added for automated testing. |
+| **Deployment** | Successfully deployed to Heroku with environment configuration. |
+
+**Sprint Retrospective – Sprint 3**  
+Project finalized, documentation updated, lessons learned recorded.
+
+**Deliverables:** Fully tested, deployed, and documented Flask blog application.
+
+### Quality Assurance & Review Process
+
+![Trello QA](media/readme_images/trello_QA.png)
+
+The "Under Review / QA" list ensured all completed work underwent thorough testing before being marked as done. This process included:
+
+- Code review and testing
+- Feature validation against acceptance criteria
+- Cross-browser compatibility testing
+- Performance optimization verification
+
+### Completed Work
+
+![Trello Done](media/readme_images/trello_done.png)
+
+The "Done" list represents all successfully completed and verified tasks, demonstrating the iterative delivery of working software throughout the development process.
+
+### Agile Principles Applied
+
+- **Iterative Development:** Features delivered in working increments
+- **Continuous Feedback:** Regular retrospectives and process improvement
+- **Collaborative Planning:** Sprint planning with clear user stories
+- **Transparent Progress:** Visual workflow with Trello board
+- **Quality Focus:** Dedicated QA phase for each deliverable
 
 
 ---
