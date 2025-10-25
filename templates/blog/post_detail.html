@@ -33,7 +33,11 @@
         </div>
         
         <!-- Post Image -->
-        {% if post.image %}
+        {% if post.external_url_image_link %}
+            <div class="mb-4">
+                <img src="{{ post.external_url_image_link }}" class="img-fluid rounded shadow" alt="{{ post.title }}">
+            </div>
+        {% elif post.image %}
             <div class="mb-4">
                 <img src="{{ post.image.url }}" class="img-fluid rounded shadow" alt="{{ post.title }}">
             </div>

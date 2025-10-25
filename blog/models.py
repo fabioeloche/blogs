@@ -91,6 +91,7 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
+    external_url_image_link = models.URLField(blank=True, null=True, help_text="External image URL")
     excerpt = models.TextField(max_length=500, blank=True)
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, blank=True,

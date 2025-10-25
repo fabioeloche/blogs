@@ -50,7 +50,7 @@ class PostAdmin(SummernoteModelAdmin):
             'fields': ('title', 'slug', 'author', 'excerpt')
         }),
         ('Content', {
-            'fields': ('content', 'image'),
+            'fields': ('content', 'external_url_image_link', 'image'),
             'classes': ('wide',)
         }),
         ('Categorization', {
