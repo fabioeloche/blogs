@@ -41,6 +41,12 @@
      - [Users Module](#users-module)  
      - [Categories Module](#categories-module)  
      - [Comments Module](#comments-module)  
+   - [Wireframes](#wireframes)  
+     - [1. Latest Posts (Homepage)](#1-latest-posts-homepage)  
+     - [2. Single Post/Article View](#2-single-postarticle-view)  
+     - [3. News Category Page](#3-news-category-page)  
+     - [4. Login Page](#4-login-page)  
+     - [5. Sign Up Page](#5-sign-up-page)  
 5. [Technology Stack](#technology-stack)  
    - [Architecture Overview](#architecture-overview)  
    - [Key Dependencies](#key-dependencies)  
@@ -243,6 +249,93 @@ The admin panel is built on Django's native interface, giving editors and conten
 - Central interface for managing user comments  
 - Allows reviewing, editing, approving, or deleting comments  
 - Shows comment author, content preview, and linked post 
+
+### Wireframes
+
+The wireframes below illustrate the initial design concepts and user interface structure for key pages and functionalities of The Tennis Time blog platform.
+
+#### 1. Latest Posts (Homepage)
+
+The homepage wireframe represents the main landing page showcasing the most recent articles and blog updates in a visually engaging grid layout.
+
+**Key Components:**
+
+- **Header**: Consistent navigation bar featuring "The Tennis Time" branding, navigation links (Home, About), and user authentication options (Login, Signup)
+- **Main Content Area**: Displays a grid of "Latest Posts" with each post card including:
+  - Featured image placeholder
+  - Post title
+  - Short description/excerpt
+  - Metadata: Category tag (e.g., "News"), author name, admin icon, comments count, and publication date
+  - "Read more" button with arrow icon for navigation
+- **Social Sharing**: Share icon positioned at the top right of the Latest Posts section
+- **Footer**: Contains branding elements, logo/description placeholder, and copyright information ("© 2025 All Right Reserved. Built with Django & Bootstrap")
+
+![Latest Posts Wireframe](media/readme_images/wireframe1.png)
+
+#### 2. Single Post/Article View
+
+This wireframe outlines the detailed article view, providing readers with a focused reading experience and additional contextual information.
+
+**Key Components:**
+
+- **Article Header**: Prominently displayed title and subtitle
+- **Main Content**: Large text block dedicated to the article body with proper typography and spacing
+- **Additional Information Section**: Three distinct feature cards below the main content, each including:
+  - Icon representation (trophy, location pin, list icons)
+  - Subtitle for context
+  - Descriptive paragraph text
+- **Secondary Content Block**: Additional space for supplementary content such as related articles, author biography, or further details
+
+![Single Post Wireframe](media/readme_images/wireframe2.png)
+
+#### 3. News Category Page
+
+This wireframe demonstrates the category-specific filtering page, allowing users to browse content organized by editorial sections.
+
+**Key Components:**
+
+- **Breadcrumb Navigation**: "Home → News" indicating the user's current location within the site hierarchy
+- **Category Header**: Prominent "NEWS" title with post count indicator ("3 posts in this category")
+- **Filtered Content Grid**: Displays posts specific to the selected category, each card containing:
+  - Featured image placeholder
+  - Post title
+  - Description paragraph
+  - Metadata icons: admin icon, date icon, and share icon for quick actions
+
+![Category Page Wireframe](media/readme_images/wireframe3.png)
+
+#### 4. Login Page
+
+This wireframe presents the user authentication interface, designed for quick and secure access to registered user features.
+
+**Key Components:**
+
+- **Login Form Card**: Centralized modal/card containing:
+  - "Login" heading with arrow icon
+  - Email input field (required)
+  - Password input field (required)
+  - "Remember Me" checkbox for persistent sessions
+  - "Login" button with arrow icon
+  - Registration prompt: "Don't have an account?" linking to a "Sign up" button with user icon
+
+![Login Page Wireframe](media/readme_images/wireframe4.png)
+
+#### 5. Sign Up Page
+
+This wireframe details the user registration interface, ensuring secure account creation with clear password requirements.
+
+**Key Components:**
+
+- **Registration Form Card**: Centralized modal/card containing:
+  - "Sign up" heading with user icon
+  - Email input field (required)
+  - Password input field (required)
+  - Password requirements checklist (e.g., minimum length, complexity rules, uniqueness validation)
+  - Password confirmation field ("Password (again!)")
+  - "Create Account" button with user icon
+  - Login prompt: "Already have an account?" linking to a "Login" button with arrow icon
+
+![Sign Up Page Wireframe](media/readme_images/wireframe5.png)
 
 ---
 
