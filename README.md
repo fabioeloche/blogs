@@ -286,7 +286,7 @@ This wireframe outlines the detailed article view, providing readers with a focu
   - Descriptive paragraph text
 - **Secondary Content Block**: Additional space for supplementary content such as related articles, author biography, or further details
 
-![Single Post Wireframe](media/readme_images/wireframe2.png)
+![Single Post Wireframe](media/readme_images/wireframe2.jpeg)
 
 #### 3. News Category Page
 
